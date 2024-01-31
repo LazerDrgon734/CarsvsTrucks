@@ -17,9 +17,9 @@ def predict(image):
     pred_class, pred_idx, outputs = model.predict(img)
     likelihood_is_car = outputs[1].item()
     if likelihood_is_car > 0.9:
-        return "Car"
-    elif likelihood_is_car < 0.1:
         return "Truck"
+    elif likelihood_is_car < 0.1:
+        return "Car"
     else:
         return "Not sure… try another picture!"
 
